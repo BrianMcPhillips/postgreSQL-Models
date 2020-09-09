@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS cats;
+CREATE TABLE cats (
+    id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    name TEXT NOT NULL,
+    weight TEXT,
+    age INT CHECK (age > 0)
+);
