@@ -1,7 +1,16 @@
 DROP TABLE IF EXISTS cats;
+DROP TABLE IF EXISTS bears;
+
 CREATE TABLE cats (
     id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     name TEXT NOT NULL,
     weight TEXT,
     age INT CHECK (age > 0)
+);
+
+CREATE TABLE bears (
+    id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    name TEXT NOT NULL,
+    weight TEXT,
+    scary BOOLEAN NOT NULL
 );
