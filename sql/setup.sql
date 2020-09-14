@@ -1,25 +1,34 @@
 DROP TABLE IF EXISTS cats;
 DROP TABLE IF EXISTS bears;
 DROP TABLE IF EXISTS monitors;
+DROP TABLE IF EXISTS shoes;
 
 CREATE TABLE cats (
     id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     name TEXT NOT NULL,
-    weight TEXT,
+    weight TEXT NOT NULL,
     age INT CHECK (age > 0)
 );
 
 CREATE TABLE bears (
     id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     name TEXT NOT NULL,
-    weight TEXT,
+    weight TEXT NOT NULL,
     scary BOOLEAN NOT NULL
 );
 
 CREATE TABLE monitors (
     id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     brand TEXT NOT NULL,
-    size INTEGER NOT NULL,
+    size INT CHECK (size > 0),
     sick BOOLEAN NOT NULL
 
 );
+
+CREATE TABLE shoes (
+    id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    name TEXT NOT NULL,
+    type TEXT NOT NULL,
+    color TEXT NOT NULL,
+    size INT CHECK (size > 0)
+)
